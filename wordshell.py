@@ -12,7 +12,7 @@ flag_detail = False
 read_word = True
 
 if __name__ == '__main__':
-	words = []
+	words = {}
 	try:
 		file = open('wordshell.words.json', 'r')
 		words = json.loads(file.read())
@@ -26,14 +26,10 @@ if __name__ == '__main__':
 	while True:
 		word = raw_input('>> ')
 		is_in = False
-		for iw in words:
-			#print words[iw][0]
-			print iw
-
-		if word in words:
-			words[ words.index(word) ]['times'] += 1
+		if word in words.keys():
+			words[word]['times'] += 1
 		else:
-			words.append( {word: {u'times': 1}} )
+			words[word] = {u'times': 1}
 			#words[-1]['times'] = 1
 		file = open('wordshell.words.json', 'w')
 		try:
