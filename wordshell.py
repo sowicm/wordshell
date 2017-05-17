@@ -25,6 +25,8 @@ if __name__ == '__main__':
 #		file.close()
 	while True:
 		word = raw_input('>> ')
+		if word == 'exit':
+			sys.exit(0)
 		is_in = False
 		if word in words.keys():
 			words[word]['times'] += 1
@@ -41,7 +43,7 @@ if __name__ == '__main__':
 		basic = t('ul.dict-basic-ul:first')
 		for i in basic.children():
 			li = pq(i)
-			if ('search_in_n' in li.html()):
+			if ('less1280' in li.html()):
 				continue
 			print '   ' + li.text()
 
