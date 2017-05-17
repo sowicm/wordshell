@@ -40,7 +40,7 @@ if __name__ == '__main__':
 			file.close()
 		#t = pq( urllib.urlopen('http://dict.cn/' + urllib.quote(word)).read().decode('utf-8') )
 		t = pq(url = 'http://dict.cn/' + urllib.quote(word))
-		basic = t('ul.dict-basic-ul:first')
+		basic = t('div.basic:first ul:first')
 		for i in basic.children():
 			li = pq(i)
 			if ('less1280' in li.html()):
